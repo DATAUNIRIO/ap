@@ -1,6 +1,6 @@
 ---
-title: "Tidy Little Things"
-subtitle: "Ensino, pesquisa e extensão"  
+title: "Tidy"
+subtitle: "Little Things"  
 author: "Steven Dutt Ross"
 categories: ["R","UNIRIO", "twitter", "Python"]
 tags: ["UNIRIO", "twitter","R", "Python"]
@@ -25,7 +25,7 @@ library(knitr)
 style_mono_accent_inverse(base_color = "#1e666b",header_color ="#3C989E",
                             #  title_slide_text_color=
                             # title_slide_background_color = 
-  title_slide_background_image ="https://raw.githubusercontent.com/DATAUNIRIO/DMQ_Talks/master/libs/uds/flyer.png")
+  title_slide_background_image ="https://raw.githubusercontent.com/DATAUNIRIO/DMQ_Talks/master/libs/uds/modelo_img.png")
 
 ```
 
