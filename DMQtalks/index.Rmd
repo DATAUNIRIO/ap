@@ -1,7 +1,5 @@
 ---
-title: "Tidy"
-subtitle: "Little Things"  
-author: "Steven Dutt Ross"
+title: " "
 categories: ["R","UNIRIO", "twitter", "Python"]
 tags: ["UNIRIO", "twitter","R", "Python"]
 output:
