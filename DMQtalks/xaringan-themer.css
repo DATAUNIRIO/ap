@@ -132,7 +132,7 @@ a, a > code {
 }
 .title-slide {
   background-color: var(--title-slide-background-color);
-  background-image: url("https://raw.githubusercontent.com/DATAUNIRIO/ap/master/DMQtalks/capa.png?token=AC2AXY7NZLSSCGRWLFXM3SK64K7XM");
+  background-image: url("https://raw.githubusercontent.com/DATAUNIRIO/aulaunirio/master/img/dmqtalks/capa.png");
   background-size: cover;
 }
 .title-slide .remark-slide-number {

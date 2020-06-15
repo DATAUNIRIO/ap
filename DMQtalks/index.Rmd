@@ -9,7 +9,6 @@ output:
       highlightStyle: github
       highlightLines: true
       ratio: "16:9"
-    countIncrementalSlides: false
 ---
 
 ```{r setup, include=FALSE, eval=TRUE}
@@ -21,10 +20,10 @@ library(xaringanthemer)
 library(knitr)
 #style_solarized_light(header_color="#b5244a")
 style_mono_accent_inverse(base_color = "#1e666b",header_color ="#3C989E",
+  title_slide_background_image ="https://raw.githubusercontent.com/DATAUNIRIO/aulaunirio/master/img/dmqtalks/capa.png")
+
                             #  title_slide_text_color=
                             # title_slide_background_color = 
-  title_slide_background_image ="https://raw.githubusercontent.com/DATAUNIRIO/ap/master/DMQtalks/capa.png?token=AC2AXY7NZLSSCGRWLFXM3SK64K7XM")
-
 ```
 
 
@@ -48,7 +47,8 @@ meta_social(
 ```
 
 
-https://raw.githubusercontent.com/DATAUNIRIO/aulaunirio/master/img/help_do_R.png
+[tradução](https://raw.githubusercontent.com/DATAUNIRIO/aulaunirio/master/img/help_do_R.png)
+
 ---
 class: center, middle
 
