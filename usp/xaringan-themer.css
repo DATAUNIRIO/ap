@@ -42,22 +42,22 @@
   --header-h3-font-size: 1.75rem;
 
   /* Colors */
-  --text-color: #FFFFFF;
-  --header-color: #3C989E;
-  --background-color: #020A0A;
-  --link-color: #1e666b;
-  --text-bold-color: #1e666b;
+  --text-color: white;
+  --header-color: white;
+  --background-color: black;
+  --link-color: #fffbd1;
+  --text-bold-color: black;
   --code-highlight-color: rgba(255,255,0,0.5);
-  --inverse-text-color: #020A0A;
-  --inverse-background-color: #1e666b;
-  --inverse-header-color: #020A0A;
-  --title-slide-background-color: #1e666b;
-  --title-slide-text-color: #020A0A;
-  --header-background-color: #3C989E;
-  --header-background-text-color: #020A0A;
-  --base: #1e666b;
-  --white: #FFFFFF;
-  --black: #020A0A;
+  --inverse-text-color: #000000;
+  --inverse-background-color: black;
+  --inverse-header-color: #000000;
+  --title-slide-background-color: black;
+  --title-slide-text-color: #000000;
+  --header-background-color: white;
+  --header-background-text-color: black;
+  --base: black;
+  --white: #CCCCCC;
+  --black: #000000;
 }
 
 html {
@@ -98,10 +98,10 @@ h1, h2, h3 {
 }
 .remark-inline-code {
   font-size: var(--code-inline-font-size);
-  color: #1e666b;
+  color: black;
 }
 .remark-slide-number {
-  color: #1e666b;
+  color: black;
   opacity: 1;
   font-size: 0.9em;
 }
@@ -132,7 +132,7 @@ a, a > code {
 }
 .title-slide {
   background-color: var(--title-slide-background-color);
-  background-image: url("https://raw.githubusercontent.com/DATAUNIRIO/ap/master/usp/img/Slide1.PNG");
+  background-image: url("img/Slide3.PNG");
   background-size: cover;
 }
 .title-slide .remark-slide-number {
@@ -145,10 +145,10 @@ a, a > code {
   float: left;
 }
 .left-column h2, .left-column h3 {
-  color: #1e666b99;
+  color: black99;
 }
 .left-column h2:last-of-type, .left-column h3:last-child {
-  color: #1e666b;
+  color: black;
 }
 .right-column {
   width: 75%;
@@ -170,7 +170,7 @@ img, video, iframe {
   max-width: 100%;
 }
 blockquote {
-  border-left: solid 5px #1e666b80;
+  border-left: solid 5px black80;
   padding-left: 1em;
 }
 .remark-slide table {
@@ -185,7 +185,7 @@ th, td {
   padding: 5px;
 }
 .remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) {
-  background: #051415;
+  background: #000000;
 }
 table.dataTable tbody {
   background-color: var(--background-color);
@@ -195,7 +195,7 @@ table.dataTable.display tbody tr.odd {
   background-color: var(--background-color);
 }
 table.dataTable.display tbody tr.even {
-  background-color: #051415;
+  background-color: #000000;
 }
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.5);
