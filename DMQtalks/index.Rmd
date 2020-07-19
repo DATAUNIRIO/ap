@@ -65,7 +65,10 @@ library(knitr)
 style_mono_accent_inverse(base_color = "#1e666b",header_color ="#3C989E", title_slide_background_image ="img/capa.png")
 ```
 
-
+```{r xaringan-animate-css, echo=FALSE}
+xaringanExtra::use_animate_css()
+xaringanExtra::use_panelset()
+```
 
 ```{r meta, echo=FALSE,message=FALSE,warning=FALSE}
 library(metathis)
@@ -204,6 +207,26 @@ background-size: cover
 
 
 ---
+
+.panelset[
+.panel[.panel-name[Gráfico]
+
+```{r, echo=FALSE,message=FALSE,warning=FALSE,fig.width=6,fig.height=6}
+knitr::include_graphics("https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/talk/inep.png")
+```
+
+]
+
+.panel[.panel-name[Fonte]
+
+### Aluno por Modalidade de Ensino
+### Fonte dos dados: INEP
+### Ano de referëncia: 2017
+### Processamento: DATAUNIRIO
+]
+]
+
+---
 class: center, middle
 
 background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/talk/Slide19.PNG)
@@ -332,9 +355,3 @@ background-size: contain
 
 [https://steven.metodosquantitativos.com/](https://steven.metodosquantitativos.com/)
 
-
----
-class: center, middle
-
-background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/talk/Slide34.PNG)
-background-size: cover
