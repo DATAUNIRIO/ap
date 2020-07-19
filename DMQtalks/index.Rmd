@@ -219,7 +219,13 @@ knitr::include_graphics("https://raw.githubusercontent.com/DATAUNIRIO/CSS/master
 
 .panel[.panel-name[Fonte]
 
-### Aluno por Modalidade de Ensino
+### Aluno por Modalidade de Ensino no UNIRIO
+###    41% Curso a distância
+###    59% Presencial
+
+<br>
+<br>
+
 ### Fonte dos dados: INEP
 ### Ano de referëncia: 2017
 ### Processamento: DATAUNIRIO
