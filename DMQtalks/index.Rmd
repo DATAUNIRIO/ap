@@ -106,12 +106,6 @@ background-size: cover
 ---
 class: center, middle
 
-background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/talk/Slide5.PNG)
-background-size: 1000px
-
----
-class: center, middle
-
 background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/talk/Slide6.PNG)
 background-size: cover
 
@@ -312,7 +306,7 @@ background-size: cover
 
 <br>
 <br>
-[livro](https://livro.metodosquantitativos.com/docs//)
+[livro](https://livro.metodosquantitativos.com/docs/)
 <br>
 <br>
 <br>
@@ -332,13 +326,21 @@ background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/im
 background-size: cover
 
 
+---
+class: center, middle
+
+
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/talk/anim7.gif)
+background-size: cover
 
 ---
 class: center, middle
 
 # Não esqueça de escrever algo para mim
 
-[http://app.metodosquantitativos.com/perguntas_mostrar/](http://app.metodosquantitativos.com/perguntas_mostrar/)
+#### [http://app.metodosquantitativos.com/perguntas/](http://app.metodosquantitativos.com/perguntas/)
+
+#### [http://app.metodosquantitativos.com/perguntas_mostrar/](http://app.metodosquantitativos.com/perguntas_mostrar/)
 
 
 ---
