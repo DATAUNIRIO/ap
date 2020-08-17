@@ -88,6 +88,14 @@ meta_social(
 ) 
 ```
 
+
+<br>
+<br>
+<br>
+### O vídeo dessa apresentação [está disponível aqui](https://youtu.be/fAwsXfoYRWg)
+
+---
+
 # Escreva algo para mim
 
 ### Por favor, coloque um comentário
