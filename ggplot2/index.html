@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introdução ao ggplot2</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: middle, right, inverse, title-slide
+
+# Introdução ao ggplot2
+
+---
+
+
+&lt;style type="text/css"&gt;
+@import url('https://fonts.googleapis.com/css?family=Chilanka&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&amp;display=swap');
+body {
+  color: #fff;
+  font-family: 'Chilanka', cursive;
+  font-size: 22px;
+}
+
+.myfont {
+  color: #fff;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 80px;
+}
+
+.minhafont {
+  color: #3C989E;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 80px;
+}
+
+
+a:link {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+&lt;/style&gt;
+
+
+
+#### O ggplot2 é um pacote do R que torna super fácil criar visualizações de dados  com apenas algumas linhas de código! 
+
+#### Por trás do ggplot2 está uma complexa filosofia de visualização, criada por Hadley Wickham em 2005, com base na teoria desenvolvida pelo estatístico e cientista da computação Leland Wilkinson em seu livro de 1999 “The grammar of graphics”.
+
+#### Se você nunca usou o ggplot, primeiro você terá que instalá-lo. Isso precisa ser feito apenas uma vez, usando:
+
+
+```r
+install.packages("ggplot2")
+```
+
+#### Feito isso, toda vez que quiser usá-lo, você pode carregar o pacote usando:
+
+
+```r
+library(ggplot2)
+```
+
+---
+
+## Estética e geometrias
+
+A filosofia por trás do ggplot é que cada visualização é feita por camadas que você pode manipular individualmente. 
+
+Vamos carregar alguns dados para gerar as visualizações! Vou usar o banco de dados *CARROS.RData*.
+
+
+```r
+load(url("https://github.com/DATAUNIRIO/Base_de_dados/raw/master/CARROS.RData"))
+# Uso da variável qualitativa como factor
+CARROS$Tipodecombustivel&lt;-factor(CARROS$Tipodecombustivel)
+CARROS$TipodeMarcha&lt;-factor(CARROS$TipodeMarcha)
+names(CARROS)
+```
+
+```
+##  [1] "Kmporlitro"              "Cilindros"              
+##  [3] "Preco"                   "HP"                     
+##  [5] "Amperagem_circ_eletrico" "Peso"                   
+##  [7] "RPM"                     "Tipodecombustivel"      
+##  [9] "TipodeMarcha"            "NumdeMarchas"           
+## [11] "NumdeValvulas"
+```
+
+```r
+#summary(CARROS)
+```
+
+---
+
+
+```r
+ggplot(data = CARROS, aes(x = Tipodecombustivel, 
+                          y = Kmporlitro))
+```
+
+![](index_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+
+---
+
+### Não há nado porque não especificamos que tipo de gráfico que queremos. Isso é feito utilizando as geometrias, que são geradas por meio das funções *geom_...*. 
+
+### No nosso caso, vamos usar a função *geom_boxplot*. Se fosse um histograma, utilizariamos o *geom_histogram*. No caso de um gráfico de barras a função seria *geom_bar*.
+
+### Como queremos adicionar uma nova camada ao nosso gráfico, usamos + para adicionar o boxplot.
+
+---
+
+
+```r
+ggplot(data = CARROS, aes(x = Tipodecombustivel, 
+                          y = Kmporlitro)) +
+  geom_boxplot()
+```
+
+![](index_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+
+---
+
+
+```r
+ggplot(data = CARROS, aes(x = Tipodecombustivel, 
+                          y = Kmporlitro)) +
+  geom_boxplot()+
+  geom_point()
+```
+
+![](index_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
+
+---
+
+
+```r
+ggplot(data = CARROS, aes(x = Tipodecombustivel, 
+                          y = Kmporlitro)) +
+  geom_boxplot()+
+  geom_jitter(width = .1, size = 2)
+```
+
+![](index_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+
+---
+
+
+```r
+ggplot(data = CARROS, aes(x = Tipodecombustivel, 
+                          y = Kmporlitro)) +
+  geom_boxplot()+
+  geom_jitter(width = 0.1, aes(col = Tipodecombustivel), size = 2.5)
+```
+
+![](index_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+
+---
+
+
+```r
+ggplot(data = CARROS, aes(x = Tipodecombustivel, 
+                          y = Kmporlitro)) +
+  geom_boxplot()+
+  geom_jitter(width = 0.1, aes(col = HP), size = 1.2)
+```
+
+![](index_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
+
+---
+
+
+```r
+ggplot(data = CARROS, aes(x = Tipodecombustivel, 
+                          y = Kmporlitro)) +
+  geom_boxplot()+
+  geom_jitter(width = 0.1, aes(col =Tipodecombustivel, size=HP))+
+  facet_grid(~TipodeMarcha)
+```
+
+![](index_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
+
+---
+
+
+```r
+ggplot(data = CARROS, aes(x = Kmporlitro, y = HP)) +
+  geom_point(aes(col = Tipodecombustivel), size = 1.8) +
+  geom_smooth(method = "lm")
+```
+
+![](index_files/figure-html/unnamed-chunk-12-1.png)&lt;!-- --&gt;
+
+---
+
+
+```r
+ggplot(data = CARROS, aes(x = Kmporlitro, y = HP)) +
+  geom_point(aes(col = Tipodecombustivel, size = Kmporlitro)) +
+  geom_smooth(method = "lm", aes(col = Tipodecombustivel))
+```
+
+![](index_files/figure-html/unnamed-chunk-13-1.png)&lt;!-- --&gt;
+
+---
+
+# Depois de dominar o básico, há muitas opções avançadas para usar no ggplot.
+# Deixo aqui o pacote gganimate como exemplo das possibilidades do uso do ggplot para saber mais.
+
+---
+
+
+![](C:/Users/Hp/Documents/GitHub/ap/ggplot2/img/gganime.gif)
+
+
+---
+class: inverse, middle, center
+
+Para outras informações 
+&lt;br&gt;
+&lt;br&gt;
+https://exts.ggplot2.tidyverse.org/gallery/
+
+---
+class: inverse, middle, center
+
+background-image: url(https://media.giphy.com/media/xUPOqo6E1XvWXwlCyQ/giphy.gif)
+background-size: contain
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+**[Se você quiser, visite o meu site](https://steven.metodosquantitativos.com/)**  
+
+[https://steven.metodosquantitativos.com/](https://steven.metodosquantitativos.com/)
+
+&lt;!--
+
+
+
+##```{r xaringan-animate-css, echo=FALSE}
+xaringanExtra::use_animate_css()
+xaringanExtra::use_panelset()
+```
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+---
+
+# Escreva algo para mim
+
+### Por favor, coloque um comentário
+
+### [http://app.metodosquantitativos.com/perguntas/](http://app.metodosquantitativos.com/perguntas/)
+
+### [http://app.metodosquantitativos.com/perguntas_mostrar/](http://app.metodosquantitativos.com/perguntas_mostrar/)
+
+
+---
+class: center, middle
+
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/talk/Slide4.PNG)
+background-size: cover
+
+
+---
+class: center, middle
+
+
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/talk/Slide10.PNG)
+background-size: 1000px
+
+
+---
+
+
+
+.panelset[
+.panel[.panel-name[Gráfico]
+
+@@```{r, echo=FALSE,message=FALSE,warning=FALSE,fig.width=6,fig.height=6}
+knitr::include_graphics("https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/talk/inep.png")
+```
+
+]
+
+.panel[.panel-name[Fonte]
+
+### Aluno por Modalidade de Ensino no UNIRIO
+###    41% Curso a distância
+###    59% Presencial
+
+&lt;br&gt;
+&lt;br&gt;
+
+### Fonte dos dados: INEP
+### Ano de referëncia: 2017
+### Processamento: DATAUNIRIO
+]
+]
+
+---
+class: center, top , minhafont
+
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/talk/atividades.png)
+background-size: cover
+
+Atividades
+&lt;br&gt;
+&lt;br&gt;
+[Ativividades](https://atividades.metodosquantitativos.com/)
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+--&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
