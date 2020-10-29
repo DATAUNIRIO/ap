@@ -202,7 +202,7 @@ ggplot(data = CARROS, aes(x = Kmporlitro, y = HP)) +
 ---
 class: inverse, middle, center
 
-Para outras informações 
+Para outras informações sobre ggplot avançado, temos:
 <br>
 <br>
 https://exts.ggplot2.tidyverse.org/gallery/
