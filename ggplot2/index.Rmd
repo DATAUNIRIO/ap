@@ -191,13 +191,18 @@ ggplot(data = CARROS, aes(x = Kmporlitro, y = HP)) +
 ---
 
 # Depois de dominar o básico, há muitas opções avançadas para usar no ggplot.
-# Deixo aqui o pacote gganimate como exemplo das possibilidades do uso do ggplot para saber mais.
+# Deixo aqui os pacotes gganimate e esquisse como exemplo das possibilidades do uso do ggplot para saber mais.
 
 ---
 
 
-![](C:/Users/Hp/Documents/GitHub/ap/ggplot2/img/gganime.gif)
+![](https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/GIF/gganime.gif)
 
+
+---
+class: inverse, middle, center
+
+![](https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/GIF/ggplot2_esquisse.gif)
 
 ---
 class: inverse, middle, center
