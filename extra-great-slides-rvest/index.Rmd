@@ -1,0 +1,20 @@
+---
+title: "Raspagem de dados via Rvest"
+subtitle: "TARC3 - 2020.2"
+author: "Steven Dutt-Ross"
+date: '12 de abril de 2020'
+output: 
+  cleanrmd::html_document_clean:
+    theme: new
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Slides
+
+- [Raspagem de dados via Rvest](intro/index.html)
+
+- [Outras apresentações](https://ap.metodosquantitativos.com/)
+

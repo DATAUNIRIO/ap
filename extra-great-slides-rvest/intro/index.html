@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Raspagem de dados via Rvest</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Steven Dutt-Ross" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <meta name="description" content="Raspagem de dados via Rvest"/>
+    <meta name="twitter:title" content="Raspagem de dados via Rvest"/>
+    <meta name="twitter:description" content="Raspagem de dados via Rvest"/>
+    <meta name="twitter:url" content="https://steven.metodosquantitativos.com/"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="RJengajado"/>
+    <meta name="twitter:site" content="RJengajado"/>
+    <meta property="og:title" content="Raspagem de dados via Rvest"/>
+    <meta property="og:description" content="Raspagem de dados via Rvest"/>
+    <meta property="og:url" content="https://steven.metodosquantitativos.com/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+
+
+
+
+
+class: left title-slide
+background-image: url('unsplash-yUvZYHV2Zbw.png')
+background-size: cover
+background-position: top center
+
+# Raspagem de dados&lt;br&gt;via Rvest
+
+.side-text[
+.  steven.metodosquantitativos.com/
+]
+
+.title-where[
+TARC3 - 2020.2&lt;br&gt;
+12 de abril de 2020
+]
+
+&lt;style type="text/css"&gt;
+@keyframes title-text{
+  0% {
+      opacity: 0;
+      text-shadow: -20px 30px 5px rgba(0,0,0,0.25);
+      transform: translate(15px, -15px);
+  }
+  10% {
+      opacity: 0;
+      text-shadow: -20px 30px 5px rgba(0,0,0,0.25);
+      transform: translate(15px, -15px);
+  }
+  80% {
+      opacity: 1;
+      text-shadow: -5px 5px 10px rgba(0,0,0,0.25);
+      transform: translate(0, 0);
+  }
+  100% {
+      opacity: 1;
+      text-shadow: -5px 5px 10px rgba(0,0,0,0.25);
+      transform: translate(0, 0);
+  }
+}
+
+@keyframes enter-right {
+  0% {
+    opacity: 0;
+    transform: rotate(90deg) translateY(-50px)
+  }
+  20% {
+    opacity: 0;
+    transform: rotate(90deg) translateY(-50px)
+  }
+  80% {
+    opacity: 1;
+    transform: rotate(90deg) translateY(0)
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(90deg) translateY(0)
+  }
+}
+
+@keyframes enter-left {
+  0% {
+    opacity: 0;
+    transform: translateY(100px)
+  }
+  20% {
+    opacity: 0;
+    transform: translateY(100px)
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(0)
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+.remark-visible .title-slide h1,
+.remark-visible .title-slide .side-text,
+.remark-visible .title-slide .title-where {
+  animation-duration: 13s;
+}
+
+.title-slide h1 {
+  font-size: 100px;
+  font-family: Jost, sans;
+  animation-name: title-text;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.side-text {
+  color: white;
+  opacity: 0.66;
+  transform: rotate(90deg);
+  position: absolute;
+  font-size: 20px;
+  top: 130px;
+  right: -130px;
+  transition: opacity 0.5s ease-in-out;
+  animation-name: enter-right;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.side-text:hover {
+  opacity: 1;
+}
+
+.side-text a {
+  color: white;
+}
+
+.title-where {
+  color: white;
+  font-family: 'Amatic SC', sans;
+  font-size: 40px;
+  position: absolute;
+  bottom: 10px;
+  animation-name: enter-left;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+&lt;/style&gt;
+
+---
+class: center, middle
+
+## [Meu primeiro projeto de raspagem de dados](http://www.estatisticacomr.uff.br/?p=869)
+
+--
+
+# Meu primeiro fracasso com raspagem de dados
+
+
+---
+
+
+# Rvest
+
+### Como conseguir o rvest
+
+
+```r
+install.packages("rvest")
+```
+
+
+---
+class: inverse, center, middle
+
+# Comparação &lt;br&gt;Rvest com &lt;br&gt;BeautifulSoup
+
+
+---
+
+.pull-left[
+No **BeautifulSoup**, nossa configuração inicial é assim: 
+
+```python
+# load packages
+from bs4 import BeautifulSoup
+import requests
+
+# connect to webpage
+resp = requests.get("https://bsi.uniriotec.br/")
+
+# get BeautifulSoup object
+soup = BeautifulSoup(resp.content)
+```
+]
+
+--
+
+.pull-right[
+Em comparação, no **rvest**:
+
+```r
+# load rvest package
+library(rvest)
+# get HTML object
+dados_html &lt;- read_html("https://bsi.uniriotec.br/")
+```
+
+]
+
+---
+class: inverse, center, middle
+
+# Como procurar por tags HTML específicas
+
+---
+
+.pull-left[
+# No BeautifulSoup:
+
+```python
+links = soup.find_all("a")
+```
+]
+
+--
+
+.pull-right[
+# No Rvest:
+
+```r
+links &lt;- dados_html %&gt;% 
+  html_nodes("a")%&gt;% 
+  html_attr("href")
+```
+No **rvest**, usamos usamos o operador **%&gt;%** (pipe).
+]
+
+---
+class: inverse, center, middle
+
+# Como extrair uma lista de todos os objetos
+
+---
+
+.pull-left[
+No **BeautifulSoup**, usamos o método **find_all** para extrair uma lista de todos os objetos de uma *tag* específica de uma página da *web*. 
+
+```python
+# get all div tags
+soup.find_all("div")
+
+# get all h1 tags
+soup.find_all("h1")
+```
+]
+
+--
+
+.pull-right[
+No **rvest**, podemos obter tags específicas de HTML usando a função *html_nodes*. 
+
+```r
+# scrape all div tags
+html_data %&gt;% html_nodes("div")
+
+# scrape header h1 tags
+html_data %&gt;% html_nodes("h1")
+```
+]
+
+
+---
+class: inverse, center, middle
+
+# Como raspar dados do site do BSI com o Rvest?
+
+
+---
+
+### Provavelmente será algo parecido com isso.
+
+
+```r
+link&lt;-"https://bsi.uniriotec.br/bancos-de-dados-i-tin0120/"
+pagina &lt;- read_html(link)
+r1 &lt;- pagina %&gt;% rvest::html_nodes("h1") %&gt;% html_text()
+r4 &lt;- pagina %&gt;% rvest::html_nodes("h4") %&gt;% html_text()
+p  &lt;- pagina %&gt;% rvest::html_nodes("p")  %&gt;% html_text()
+```
+
+
+---
+
+Outros pacotes do R interessantes:
+
+1.   [RSelenium: R Bindings for 'Selenium WebDriver'](https://cran.r-project.org/web/packages/RSelenium/index.html)
+2.   [XML: Tools for Parsing and Generating XML Within R and S-Plus](https://cran.r-project.org/web/packages/XML/index.html)
+3.  [xml2: Parse XML](https://cran.r-project.org/web/packages/xml2/index.html)
+4.  [htmltidy: Tidy Up and Test XPath Queries on HTML and XML Content](https://cran.r-project.org/web/packages/htmltidy/index.html)
+5.  [seleniumPipes: R Client Implementing the W3C WebDriver Specification](https://cran.r-project.org/web/packages/seleniumPipes/index.html)
+
+
+Referências para criação dessa apresentação &lt;br&gt;
+[BeautifulSoup vs. Rvest](http://theautomatic.net/2019/07/23/beautifulsoup-vs-rvest/)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": true,
+"ratio": "16:9",
+"slideNumberFormat": "%current%"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
