@@ -330,7 +330,7 @@ links <- dados_html %>%
   html_nodes("a")%>% 
   html_attr("href")
 ```
-No **rvest**, usamos usamos o operador **%>%** (pipe).
+No **rvest**, usamos o operador **%>%**.
 ]
 
 ---
