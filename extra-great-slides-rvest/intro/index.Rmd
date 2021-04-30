@@ -254,6 +254,23 @@ class: center, middle
 
 ## [Meu primeiro projeto de raspagem de dados](http://www.estatisticacomr.uff.br/?p=869)
 
+```{r, echo=FALSE,eval=FALSE, warning=FALSE,message=FALSE}
+gitlink::ribbon_css("https://aulas.metodosquantitativos.com/", 
+    text = "  Aulas!",width = "250px", top = "28px", 
+    parent_css = list(top = "00px", "z-index" = "100"))
+
+```
+
+
+<div class="ribbon-parent" style="position:absolute;top:0px;overflow:hidden;width:150px;height:150px;z-index:5;pointer-events:none;right:0px;top:00px;z-index:100;">
+<div class="ribbon" style="background-color:white;overflow:hidden;white-space:nowrap;position:absolute;top:45px;box-shadow:0 0 10px #888;pointer-events:auto;right:-50px;transform:rotate(45deg);width:250px;top:28px;"><a href="https://aulas.metodosquantitativos.com/" style="border:1px solid white;color:black;display:block;font:bold 95% &#39;Collegiate&#39;, Arial, sans-serif;margin:1px 0;padding:6px 50px;text-align:center;text-decoration:none;letter-spacing:-0.3px;" target="_blank"> Aulas</a></div></div>
+<style>
+  .ribbon:hover {opacity:1;}
+  .ribbon {opacity:0.6;transition:opacity 0s ease 0s;}
+</style>
+
+
+
 --
 
 # Meu primeiro fracasso com raspagem de dados
@@ -275,6 +292,7 @@ install.packages("rvest")
 class: inverse, center, middle
 
 # Comparação <br>Rvest com <br>BeautifulSoup
+
 
 
 ---
