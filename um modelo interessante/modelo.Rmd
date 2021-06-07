@@ -1,0 +1,90 @@
+---
+title: "Collect and use open access World Bank data to know your country"
+author: 
+  - "Bruno Thiago Tomio https://bttomio.github.io/slides/WDI2021/Slides.html"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      beforeInit: "macros.js"
+    seal: false
+# PRINT OK = xaringan::decktape("./Slides.html", "./Slides.pdf", docker = F)
+---
+
+```{r metathis, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_name("github-repo" = "bttomio/WDI---2021-Talk") %>% 
+  meta_social(
+    title = "Collect and use open access World Bank data to know your country",
+    description = paste0(
+      "Introduction to the R package WDI."
+    ),
+    url = "https://bttomio.github.io/slides/WDI---2021-Talk/Slides.html",
+    image = "https://bttomio.github.io/slides/WDI---2021-Talk/share-card.png",
+    image_alt = paste0(
+      "Collect and use open access World Bank data to know your country,", 
+      "presented by Bruno Thiago Tomio"
+    ),
+    og_type = "website",
+    og_author = "Bruno Thiago Tomio",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@bttomio",
+  )
+```
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(ggthemes)
+library(ggrepel)
+library(icons)
+#remotes::install_github("mitchelloharawild/icons")
+library(transformr)
+library(gganimate)
+#devtools::install_github("gadenbuie/xaringanExtra")
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_light(
+  header_font_google = google_font("Josefin Slab", "600"),
+  text_font_google   = google_font("Work Sans", "300", "300i"),
+  code_font_google   = google_font("IBM Plex Mono"),
+  title_slide_background_image = "all-ok.PNG",
+  title_slide_background_size = "95%",
+  title_slide_background_position = "bottom",
+  base_color = "#000000",
+  code_inline_color = "#13A10E",
+  link_color = "#13A10E",
+  code_font_size = "0.7em"
+)
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringanExtra-share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+count: false
+
+class: inverse, center, title-slide, middle
+
+<style>
+.title-slide .remark-slide-number {
+  display: none;
+}
+</style>
