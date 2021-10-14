@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Human Resources 3.0</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Keith McNulty" />
+    <meta name="date" content="2021-07-26" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+    <meta name="description" content="Presented at the IPAC Conference July 26, 2021"/>
+    <meta name="twitter:title" content="Human Resources 3.0"/>
+    <meta name="twitter:description" content="Presented at the IPAC Conference July 26, 2021"/>
+    <meta name="twitter:url" content="https://ipac.keithmcnulty.org"/>
+    <meta name="twitter:image" content="https://ipac.keithmcnulty.org/cover.png"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="dr_keithmcnulty"/>
+    <meta name="twitter:site" content="dr_keithmcnulty"/>
+    <meta property="og:title" content="Human Resources 3.0"/>
+    <meta property="og:description" content="Presented at the IPAC Conference July 26, 2021"/>
+    <meta property="og:url" content="https://ipac.keithmcnulty.org"/>
+    <meta property="og:image" content="https://ipac.keithmcnulty.org/cover.png"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
+    <script src="libs/xaringanExtra-progressBar/progress-bar.js"></script>
+    <link href="libs/animate.css-xaringan/animate.fade.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+
+
+
+
+
+class: left title-slide no-animation
+background-image: url('nasa.jpg')
+background-size: cover
+background-position: top center
+
+[medium-km]: https://keith-mcnulty.medium.com
+[dr_km]: https://twitter.com/dr_keithmcnulty
+[km]: https://www.linkedin.com/in/keith-mcnulty/
+
+# Human Resources 3.0
+
+.title-where[
+IPAC Conference - July 26, 2021
+]
+
+&lt;style type="text/css"&gt;
+@keyframes title-text{
+    0% {
+        opacity: 0;
+        text-shadow: -20px 30px 5px rgba(0,0,0,0.25);
+        transform: translate(15px, -15px);
+    }
+    10% {
+        opacity: 0;
+        text-shadow: -20px 30px 5px rgba(0,0,0,0.25);
+        transform: translate(15px, -15px);
+    }
+    80% {
+        opacity: 1;
+        text-shadow: -5px 5px 10px rgba(0,0,0,0.25);
+        transform: translate(0, 0);
+    }
+    100% {
+        opacity: 1;
+        text-shadow: -5px 5px 10px rgba(0,0,0,0.25);
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes enter-right {
+  0% {
+    opacity: 0;
+    transform: rotate(90deg) translateY(-50px)
+  }
+  20% {
+    opacity: 0;
+    transform: rotate(90deg) translateY(-50px)
+  }
+  80% {
+    opacity: 1;
+    transform: rotate(90deg) translateY(0)
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(90deg) translateY(0)
+  }
+}
+
+@keyframes enter-left {
+  0% {
+    opacity: 0;
+    transform: translateY(100px)
+  }
+  20% {
+    opacity: 0;
+    transform: translateY(100px)
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(0)
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+.title-slide h1 {
+	font-size: 100px;
+	font-family: Jost, sans;
+	animation-name: title-text;
+	animation-duration: 13s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+.side-text {
+	color: white;
+  opacity: 0.66;
+	transform: rotate(90deg);
+	position: absolute;
+  font-size: 20px;
+	top: 130px;
+	right: -130px;
+  transition: opacity 0.5s ease-in-out;
+	animation-name: enter-right;
+	animation-duration: 13s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+.side-text:hover {
+  opacity: 1;
+}
+
+.side-text a {
+  color: white;
+}
+
+.title-where {
+	color: white;
+	font-family: Jost, sans;
+	font-size: 40px;
+	position: relative;
+	top: -30px;
+	animation-name: enter-left;
+	animation-duration: 13s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+&lt;/style&gt;
+
+<style>.xe__progress-bar__container {
+  top:0;
+  opacity: 1;
+  position:absolute;
+  right:0;
+  left: 0;
+}
+.xe__progress-bar {
+  height: 0.25em;
+  background-color: blue;
+  width: calc(var(--slide-current) / var(--slide-total) * 100%);
+}
+.remark-visible .xe__progress-bar {
+  animation: xe__progress-bar__wipe 200ms forwards;
+  animation-timing-function: cubic-bezier(.86,0,.07,1);
+}
+@keyframes xe__progress-bar__wipe {
+  0% { width: calc(var(--slide-previous) / var(--slide-total) * 100%); }
+  100% { width: calc(var(--slide-current) / var(--slide-total) * 100%); }
+}</style>
+
+---
+class: center, middle
+
+# &amp;#128064; [https://ipac.keithmcnulty.org](https://ipac.keithmcnulty.org)
+
+---
+class: left, middle
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(ipac.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('div')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = null
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+## Who am I and why am I here?
+
+.f3[
+&amp;#x1F44B; Hi, I'm **Keith McNulty**.  I'm Director of Talent Science and Analytics at McKinsey &amp; Company.
+]
+
+.f3[
+&amp;#128164; Originally a Pure Mathematician
+]
+
+.f3[
+&amp;#128170; Spent 10+ years working in Assessment
+]
+
+.f3[
+&amp;#129299; Now I apply statistics/data science in the people/HR space
+]
+
+.f3[
+&amp;#128571; Fascinated by people measurement and analytics 
+]
+
+.f3[
+&amp;#128483; Blogging/updates:  [LinkedIn][km] | [Twitter][dr_km] |  [Medium][medium-km]
+]
+
+
+---
+class: left, middle
+
+## What I want to talk about today
+
+.f3[
+&amp;#129302; The historic nature of the times we are living in
+]
+
+.f3[
+&amp;#129302; The impact of this on HR
+]
+
+.f3[
+&amp;#129302; The rapidly changing world of Assessment
+]
+
+.f3[
+&amp;#129302; What this means for Assessment professionals
+]
+
+
+---
+class: inverse, center, middle
+
+# We are living through an historic disruption in the world of work
+
+
+---
+class: left, middle
+
+## Back in time to the last major disruption
+
+.pull-left[
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Elderlyspinnera.jpg/1280px-Elderlyspinnera.jpg" height=450&gt;&lt;/img&gt;
+]
+
+.pull-right[
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Spinner_in_Vivian_Cotton_Mills._Been_at_it_2_years._Where_will_her_good_looks_be_in_10_years%5E_Cherryville%2C_N.C._-_NARA_-_523111.jpg/2560px-Spinner_in_Vivian_Cotton_Mills._Been_at_it_2_years._Where_will_her_good_looks_be_in_10_years%5E_Cherryville%2C_N.C._-_NARA_-_523111.jpg" height=450&gt;&lt;/img&gt;
+]
+
+---
+class: left, middle
+
+## The UK 1770-1890
+
+&lt;center&gt;&lt;img src="indrev.png" height=450&gt;&lt;/img&gt;&lt;/center&gt;
+
+---
+class: left, middle
+
+## The United States 1895-2015
+
+&lt;center&gt;&lt;img src="today.png" height=450&gt;&lt;/img&gt;&lt;/center&gt;
+
+
+---
+class: left, middle
+
+## What happened in the mid-1970s?
+
+&lt;center&gt;&lt;img src="https://flashbak.com/wp-content/uploads/2014/09/067_Dawn-of-the-Computer-Age.png" height=450&gt;&lt;/img&gt;&lt;/center&gt;
+
+
+---
+class: left, middle
+
+## Today, only 40 years later
+
+&lt;center&gt;&lt;video height="450" controls="controls" preload="none" onclick="this.play()"&gt;
+ &lt;source type="video/webm" src="alibaba.mp4"&gt;
+&lt;/video&gt;&lt;/center&gt;
+
+
+&lt;center&gt;&lt;audio id="myAudio" src="http://www.gstatic.com/b-g/KOK4HAMTAPH5Z96154F6GKUM74A3Z1576269077.mp3" preload="auto"&gt;
+&lt;/audio&gt;
+&lt;a onClick="togglePlay()" style="cursor:pointer;"&gt;&amp;#9654; Listen to phone call&lt;/a&gt;&lt;/center&gt;
+
+&lt;script type="text/javascript"&gt;
+var myAudio = document.getElementById("myAudio");
+
+function togglePlay() {
+  return myAudio.paused ? myAudio.play() : myAudio.pause();
+};
+&lt;/script&gt;
+
+---
+class: left, middle
+
+## Profound shifts in jobs expected
+
+&lt;center&gt;&lt;img src="mgi.png" height=450&gt;&lt;/img&gt;&lt;/center&gt;
+
+
+---
+class: inverse, center, middle
+
+# There is an imperative and an opportunity for HR to up its game
+
+---
+class: left, middle
+
+## HR can and must adapt
+
+&lt;img src="hr1.png" height=450&gt;&lt;/img&gt;
+
+---
+class: left, middle
+
+## HR can and must adapt
+
+&lt;img src="hr2.png" height=450&gt;&lt;/img&gt;
+
+---
+class: left, middle
+
+## HR can and must adapt
+
+&lt;img src="hr3.png" height=450&gt;&lt;/img&gt;
+
+
+---
+class: left, middle
+
+## Analytics underpins HR 3.0
+
+&lt;center&gt;&lt;img src="analytics.png" height=450&gt;&lt;/img&gt;&lt;/center&gt;
+
+
+---
+class: inverse, center, middle
+
+# The world of assessment is developing at an unprecedented pace in the digital era
+
+
+---
+class: left, middle
+
+## How will decisions be made?
+
+&lt;center&gt;&lt;img src="algorithms.png" height=450&gt;&lt;/img&gt;&lt;/center&gt;
+
+---
+class: left, middle
+
+## How to keep up with it all?
+
+.f3[
+&amp;#128165;  Automated video assessment/facial recognition 
+]
+
+.f3[
+&amp;#128165;  Natural Language Processing 
+]
+
+.f3[
+&amp;#128165;  The emergence of 'grit' as a construct
+]
+
+.f3[
+&amp;#128165;  Concerns about bias/fairness
+]
+
+.f3[
+&amp;#128165;  And so much more
+]
+
+
+---
+class: inverse, center, middle
+
+# The assessment profession has a critical role to play, but this requires a more analytically driven approach
+
+---
+class: left, middle
+
+## Very important questions remain mostly unanswered 
+
+.f3[
+&amp;#128533; Despite a lot of press, most technologies have yet to prove validity/fitness for purpose. PR is winning over science.
+]
+
+.f3[
+&amp;#128533; Risks to fairness/diversity a concern.
+]
+
+.f3[
+&amp;#128533; Applicant reactions/experience - particularly where poor face validity
+]
+
+.f3[
+&amp;#128533; Academic research is now behind the curve - innovation happening in enterprise settings
+]
+
+
+---
+class: left, middle
+
+## High analytic standards needed 
+
+.f3[
+&amp;#129299; Require a high standard of data - don't take vendor's word for it
+]
+
+.f3[
+&amp;#129299; Be able to analyze and model the data
+]
+
+.f3[
+&amp;#129299; Analytically defend the key four pillars:  validity, fairness, efficiency, experience
+]
+
+.f3[
+&amp;#129299; Imperative to have analytic capabilities on teams
+]
+
+
+---
+class: inverse, center, middle
+
+# &amp;#128591; Thank you!
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": true,
+"ratio": "16:9",
+"slideNumberFormat": "%current%"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
