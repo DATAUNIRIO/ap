@@ -69,7 +69,7 @@ Por ano da execução da emenda
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
-knitr::include_graphics("C:/Users/Hp/Documents/GitHub/repositorio/emendas_parlamentares/Rplot.png")
+knitr::include_graphics("img/Rplot.png")
 
 ```
 
