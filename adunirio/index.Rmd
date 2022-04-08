@@ -9,7 +9,7 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-#knit: pagedown::chrome_print
+knit: pagedown::chrome_print
 ---
 
 ```{r, include=FALSE, warning=FALSE, message=FALSE}
@@ -79,7 +79,7 @@ knitr::include_graphics("img/Rplot.png")
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
-knitr::include_graphics("C:/Users/Hp/Documents/GitHub/repositorio/emendas_parlamentares/Rplot03.png")
+knitr::include_graphics("img/Rplot03.png")
 
 ```
 
@@ -92,7 +92,7 @@ class: inverse, center, middle
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
-knitr::include_graphics("C:/Users/Hp/Documents/GitHub/repositorio/emendas_parlamentares/Rplot04.png")
+knitr::include_graphics("img/Rplot04.png")
 
 ```
 
@@ -104,14 +104,14 @@ class: inverse, center, middle
 ---
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
-knitr::include_graphics("C:/Users/Hp/Documents/GitHub/repositorio/emendas_parlamentares/Imagem1.png")
+knitr::include_graphics("img/Imagem1.png")
 
 ```
 
 ---
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
-knitr::include_graphics("C:/Users/Hp/Documents/GitHub/repositorio/emendas_parlamentares/Imagem2.png")
+knitr::include_graphics("img/Imagem2.png")
 
 ```
 
