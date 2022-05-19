@@ -1,0 +1,431 @@
+---
+title: "TRANSPARÊNCIA ORÇAMENTÁRIA E ENGAJAMENTO"
+subtitle: "Simpósio Brasileiro de Sistemas de Informação"
+author: "Steven Dutt-Ross"
+date: '19 de maio de 2022'
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    css: xaringan-themer.css
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: true
+      ratio: 16:9
+      slideNumberFormat: "%current%"
+knit: pagedown::chrome_print      
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+```{r xaringan-themer, include=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  # primary_color = "#345865",
+  primary_color = "#B56B6F",
+  secondary_color = "#121111",
+  black_color = "#121111",
+  white_color = "#FFF",
+  base_font_size = "25px",
+  # text_font_family = "Jost",
+  # text_font_url = "https://indestructibletype.com/fonts/Jost.css",
+  header_font_google = google_font("Roboto Slab", "400", "700"),
+  header_font_weight = "400",
+  inverse_header_color = "#121111",
+  title_slide_text_color = "#121111",
+  text_slide_number_color = "#121111",
+  text_bold_color = "#121111",
+  code_inline_color = "#121111",
+  code_highlight_color = "transparent",
+  link_color = "#121111",
+  table_row_even_background_color = lighten_color("#345865", 0.9),
+  extra_fonts = list(
+    "https://indestructibletype.com/fonts/Jost.css",
+    google_font("Amatic SC", "400")
+  ),
+  colors = c(
+    green = "#31b09e",
+    "green-dark" = "#2c8475",
+    highlight = "#87f9bb",
+    purple = "#887ba3",
+    pink = "#B56B6F",
+    orange = "#f79334",
+    red = "#dc322f",
+    `blue-dark` = "#002b36",
+    `text-dark` = "#202020",
+    `text-darkish` = "#424242",
+    `text-mild` = "#606060",
+    `text-light` = "#9a9a9a",
+    `text-lightest` = "#eaeaea"
+  ),
+  extra_css = list(
+    ".remark-slide-content h3" = list(
+      "margin-bottom" = 0, 
+      "margin-top" = 0
+    ),
+    ".smallish, .smallish .remark-code-line" = list(`font-size` = "0.9em")
+  )
+)
+#library(xaringanExtra)
+#xaringanExtra::use_xaringan_extra(c("animate_css")
+#xaringanExtra::use_extra_styles()
+```
+
+```{r metadata, echo=FALSE,warning=FALSE,message=FALSE}
+library(metathis)
+meta() %>% 
+  meta_description("Transparência orçamentária, engajamento e tecnologia") %>% 
+  meta_social(
+    title = "Transparência orçamentária e engajamento",
+    url = "https://steven.metodosquantitativos.com/",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "RJengajado"
+  )
+```
+
+```{r components, include=FALSE}
+slides_from_images <- function(
+  path,
+  regexp = NULL,
+  class = "hide-count",
+  background_size = "contain",
+  background_position = "top left"
+) {
+  if (isTRUE(getOption("slide_image_placeholder", FALSE))) {
+    return(glue::glue("Slides to be generated from [{path}]({path})"))
+  }
+  if (fs::is_dir(path)) {
+    imgs <- fs::dir_ls(path, regexp = regexp, type = "file", recurse = FALSE)
+  } else if (all(fs::is_file(path) && fs::file_exists(path))) {
+    imgs <- path
+  } else {
+    stop("path must be a directory or a vector of images")
+  }
+  imgs <- fs::path_rel(imgs, ".")
+  breaks <- rep("\n---\n", length(imgs))
+  breaks[length(breaks)] <- ""
+
+  txt <- glue::glue("
+  class: {class}
+  background-image: url('{imgs}')
+  background-size: {background_size}
+  background-position: {background_position}
+  {breaks}
+  ")
+
+  paste(txt, sep = "", collapse = "")
+}
+options("slide_image_placeholder" = FALSE)
+```
+
+
+class: left title-slide
+background-image: url('unsplash.png')
+background-size: cover
+background-position: top center
+
+# Transparência orçamentária e<br>participação cívica 
+
+
+.title-where[
+Simpósio Brasileiro de Sistemas de Informação<br>
+Steven Dutt-Ross                             
+]
+
+```{css echo=FALSE}
+@keyframes title-text{
+  0% {
+      opacity: 0;
+      text-shadow: -20px 30px 5px rgba(0,0,0,0.25);
+      transform: translate(15px, -15px);
+  }
+  10% {
+      opacity: 0;
+      text-shadow: -20px 30px 5px rgba(0,0,0,0.25);
+      transform: translate(15px, -15px);
+  }
+  80% {
+      opacity: 1;
+      text-shadow: -5px 5px 10px rgba(0,0,0,0.25);
+      transform: translate(0, 0);
+  }
+  100% {
+      opacity: 1;
+      text-shadow: -5px 5px 10px rgba(0,0,0,0.25);
+      transform: translate(0, 0);
+  }
+}
+
+@keyframes enter-right {
+  0% {
+    opacity: 0;
+    transform: rotate(90deg) translateY(-50px)
+  }
+  20% {
+    opacity: 0;
+    transform: rotate(90deg) translateY(-50px)
+  }
+  80% {
+    opacity: 1;
+    transform: rotate(90deg) translateY(0)
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(90deg) translateY(0)
+  }
+}
+
+@keyframes enter-left {
+  0% {
+    opacity: 0;
+    transform: translateY(100px)
+  }
+  20% {
+    opacity: 0;
+    transform: translateY(100px)
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(0)
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+.remark-visible .title-slide h1,
+.remark-visible .title-slide .side-text,
+.remark-visible .title-slide .title-where {
+  animation-duration: 13s;
+}
+
+.title-slide h1 {
+  font-size: 100px;
+  font-family: Jost, sans;
+  animation-name: title-text;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.side-text {
+  color: white;
+  opacity: 0.66;
+  transform: rotate(90deg);
+  position: absolute;
+  font-size: 20px;
+  top: 130px;
+  right: -130px;
+  transition: opacity 0.5s ease-in-out;
+  animation-name: enter-right;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.side-text:hover {
+  opacity: 1;
+}
+
+.side-text a {
+  color: white;
+}
+
+.title-where {
+  color: #121111;
+  font-family: 'Amatic SC', sans;
+  font-size: 40px;
+  position: absolute;
+  bottom: 10px;
+  animation-name: enter-left;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+```
+
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide2.PNG)
+background-position: top center
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide3.PNG)
+background-size: contain
+
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide4.PNG)
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide5.PNG)
+background-position: 50% 50%
+background-size: contain
+
+---
+background-image: url(https:/raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide6.PNG)
+background-size: contain
+
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide7.PNG)
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide8.PNG)
+background-position: 50% 50%
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide9.PNG)
+background-size: contain
+
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide10.PNG)
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide11.PNG)
+background-position: 50% 50%
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide12.PNG)
+background-size: contain
+
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide13.PNG)
+background-size: contain
+
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide14.PNG)
+background-position: 50% 50%
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide15.PNG)
+background-size: contain
+
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide16.PNG)
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide17.PNG)
+background-position: 50% 50%
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide18.PNG)
+background-size: contain
+
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide19.PNG)
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide20.PNG)
+background-position: 50% 50%
+background-size: contain
+
+
+[Acesso](https://duttross.shinyapps.io/transparencia1/)
+
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide21.PNG)
+background-size: contain
+
+[Acesso](https://duttross.shinyapps.io/transparencia1/)
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide22.PNG)
+background-size: contain
+
+[Acesso](https://duttross.shinyapps.io/transparencia1/)
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide23.PNG)
+background-position: 50% 50%
+background-size: contain
+
+[Acesso](https://duttross.shinyapps.io/transparencia1/)
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide24.PNG)
+background-size: contain
+
+[Acesso](https://duttross.shinyapps.io/transparencia1/)
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide25.PNG)
+background-size: contain
+
+[Acesso](https://duttross.shinyapps.io/transparencia1/)
+
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide26.PNG)
+background-position: 50% 50%
+background-size: contain
+
+
+[Acesso](https://duttross.shinyapps.io/Engajamento/)
+
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide27.PNG)
+background-size: contain
+
+[Acesso](https://duttross.shinyapps.io/Engajamento/)
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide28.PNG)
+background-size: contain
+
+[Acesso](http://repositorio.metodosquantitativos.com/)
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide29.PNG)
+background-position: 50% 50%
+background-size: contain
+
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide30.PNG)
+background-size: contain
+
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide31.PNG)
+background-size: contain
+
+[Acesso](https://duttross.shinyapps.io/orcamentopopularUFF/)
+
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide32.PNG)
+background-size: contain
+
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide33.PNG)
+background-position: 50% 50%
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/DATAUNIRIO/apresentacaodataunirio/master/img/Slide34.PNG)
+background-size: contain
+
+
+
