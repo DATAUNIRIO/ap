@@ -10,7 +10,7 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-knit: pagedown::chrome_print
+#knit: pagedown::chrome_print
 ---
 
 ```{r, include=FALSE, warning=FALSE, message=FALSE}
@@ -70,7 +70,7 @@ class: inverse, center, middle
 
 # Aprendizado 
 
-- Insuficiencia Orçamentária
+- Insuficiência Orçamentária
   
 # QDD e  Execução Orçamentária
 
