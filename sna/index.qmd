@@ -1,0 +1,51 @@
+---
+format: 
+  revealjs:
+    theme: [default, style.scss]
+    width: 1600
+    height: 900
+    footer: '<a href="https://steven.metodosquantitativos.com/">steven.metodosquantitativos.com</a>'
+---
+
+##  {.title}
+
+::: r-fit-text
+Introdução a
+
+[análise de redes]{.flow}
+
+conceitos básicos
+:::
+
+
+
+## Roteiro {.r-fit-text}
+
+-   [Dados]{.red} de rede [(network data)]{.orange}  
+-   Escalas de [mensuração]{.orange}  
+-   [Representar]{.red} as relações sociais  
+
+
+
+##  {background-image="img/Imagem1.png" background-size="contain" background-color="aquamarine" }
+
+
+##  {background-image="img/Imagem2.png" background-size="contain"  background-color="white" }
+
+
+##  {background-image="img/Imagem3.png" background-size="contain"  background-color="white" }
+
+##  {background-image="img/Imagem4.png" background-size="contain"  background-color="white" }
+
+##  {background-image="img/Imagem5.png" background-size="contain"  background-color="white" }
+
+
+```{r}
+# https://emilhvitfeldt.github.io/useR2022-textrecipes/#/getting-numbers---tf-idf
+# https://github.com/EmilHvitfeldt/useR2022-textrecipes/blob/main/index.qmd
+
+# https://apreshill.github.io/palmerpenguins-useR-2022/#/section
+# https://github.com/apreshill/palmerpenguins-useR-2022/blob/main/index.qmd
+
+```
+
