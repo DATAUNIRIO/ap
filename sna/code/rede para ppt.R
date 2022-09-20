@@ -1,3 +1,26 @@
+# Parte 1 - Teoria & Aplicação no R
+# 1. Núcleos & ligações
+# 2. Revisão de matriz (matriz quadrada e matriz simétrica)
+# 3. Matriz de ligações (matriz de adjacência)
+# 4. Graficos de rede
+# 5. Conecção and distância
+# 6. A distância geodésica
+# 7. Medidas de centralidade e poder
+# 7.1 closeness
+# 7.2 betweenness
+# 7.3 degrees
+# 7.4 eigenvector centrality
+# 8. Grupos e comunidades
+#
+# Parte 2 - Aplicada com R
+# 1 - construindo redes com o R
+# 2 - criação de matrizes com o R
+# 3 - distância geodésica com o R
+# 4 - as quatro medidas de centralidade e poder com o R
+# 5 - identificando grupos com o R
+
+
+
 load('C:/Users/Hp/Documents/GitHub/Modelos_Basicos_e_Testes/social_network_methods/dados/star/star.Rdata')
 
 
