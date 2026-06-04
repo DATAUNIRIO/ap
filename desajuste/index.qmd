@@ -18,7 +18,7 @@ NOTA DE EMPENHO
 
 NOTA DE EMPENHO
 
-Quais as Informações     <br>
+Quais as informações     <br>
 Orçamentárias?
 
 ![](https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/empenho.png){.absolute top=0 right=50}
@@ -27,7 +27,7 @@ Orçamentárias?
 
 NOTA DE EMPENHO
 
-Quais as Informações     <br>
+Quais as informações     <br>
 Orçamentárias?
 
 ![](https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/empenho2.png){.absolute top=0 right=50}
@@ -44,6 +44,67 @@ Orçamentárias?
 
 ## {background-color="#000000" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/siafi1.png" background-size="contain"}
 
+## {background-color="#000000" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/siafi2.png" background-size="contain"}
+
+## {background-color="#000000" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/siafi3.png" background-size="contain"}
+
+## {background-color="#000000" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/siafi4.png" background-size="contain"}
+
+## {background-color="#000000" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/siafi5.png" background-size="contain"}
+
+## {auto-animate=true}
+
+Duas perguntas
+
+## {auto-animate=true}
+<br><br><br>
+
+### Qual <span class="laranja-fpo">valor máximo </span>que podemos empenhar?    
+### Qual valor que <span class="laranja-fpo">já empenhamos</span>?
+
+Duas perguntas
+
+## {background-color="#000000" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/siafi6.png" background-size="contain"}
+
+## {background-color="#000000" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/siafi7.png" background-size="contain"}
+
+
+## 
+
+<br><br><br>
+
+### Por que essas contas são importantes?
+
+<br>
+
+### Dois motivos
+
+## {background-color="#ffffff" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/materia1.png" background-size="contain"}
+
+## {background-color="#ffffff" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/materia2.png" background-size="contain"}
+
+
+## 
+
+<br><br><br>
+
+::: {style="text-align: center;"}
+### DESPESAS DE EXERCÍCIOS ANTERIORES
+### &
+### RESTOS A PAGAR
+:::
+
+
+## {background-color="#000000" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/siafi8.png" background-size="contain"}
+
+## 
+
+<br><br><br>
+
+::: {style="text-align: center;"}
+### Como fazer um Orçamento Participativo, Descentralizado e Transparente? A experiência da Unirio.
+:::
+
 ## {auto-animate=true}
 
 Sistema Universitário de Participação
@@ -58,4 +119,55 @@ Sistema Universitário de Participação
 
 Sistema Universitário de Participação
 
+
+## {background-color="#ffffff" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/FPO/Slide21.PNG" background-size="contain"}
+
+## {background-color="#ffffff" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/FPO/Slide22.PNG" background-size="contain"}
+
+
+## {auto-animate=true}
+
+Sistema Universitário de Participação
+
+[Protótipo Contribua](https://dataunirio.uniriotec.br/app/1contribua/)
+
+[Protótipo Democracia Digital](https://dataunirio.uniriotec.br/app/democraciadigital/)
+
+[Protótipo Orçamento Participativo](https://dataunirio.uniriotec.br/app/op/)
+
+## {background-color="#ffffff" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/FPO/Slide24.PNG" background-size="contain"}
+
+## {background-color="#ffffff" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/FPO/Slide25.PNG" background-size="contain"}
+
+## 
+
+NOTA DE EMPENHO
+
+Monitorar o <br>
+<span class="laranja-fpo">Orçamento Paticipativo </span> <br>
+por meio do Plano  <br>
+Interno
+
+
+![](https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/empenho3.png){.absolute top=0 right=50}
+
+## Transparência
+dos Empenhos da Universidade  <br><br>
+
+Traduzir a linguagem dura do SIAFI para uma forma acessível<br><br>
+
+[Painel](https://orcamento.unirio.br/app/dash2026/)  <br>
+  <br>
+[Microdados](https://orcamento.unirio.br/app/empenhos2026/)
+
+
+## 
+
+<br><br><br>
+
+::: {style="text-align: center;"}
+### Obrigado
+<br><br>
+"O orçamento é a métrica das prioridades."
+:::
 
