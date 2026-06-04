@@ -1,0 +1,61 @@
+---
+title: "III Congresso Nacional do Desajuste"
+format:
+  revealjs:
+    transition: slide
+    background-transition: fade
+    theme: [default, custom.scss]
+css: estilo.css    
+---
+
+## 
+
+NOTA DE EMPENHO
+
+![](https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/empenho.png){.absolute top=0 right=50}
+
+## 
+
+NOTA DE EMPENHO
+
+Quais as Informações     <br>
+Orçamentárias?
+
+![](https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/empenho.png){.absolute top=0 right=50}
+
+## 
+
+NOTA DE EMPENHO
+
+Quais as Informações     <br>
+Orçamentárias?
+
+![](https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/empenho2.png){.absolute top=0 right=50}
+
+---
+
+## 
+
+> CONTROLAR O ORÇAMENTO É CONTROLAR A CONTA CONTÁBIL
+
+
+
+## {background-color="#ffffff" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/contas.png" background-size="contain"}
+
+## {background-color="#000000" background-image="https://raw.githubusercontent.com/DATAUNIRIO/CSS/master/img/desajuste/siafi1.png" background-size="contain"}
+
+## {auto-animate=true}
+
+Sistema Universitário de Participação
+
+## {auto-animate=true}
+
+
+<span class="laranja-fpo">Planejar </span> um Orçamento Participativo, Descentralizado e Transparente.
+
+<span class="laranja-fpo">Executar </span> um Orçamento Participativo, Descentralizado e Transparente.
+
+
+Sistema Universitário de Participação
+
+
